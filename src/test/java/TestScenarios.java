@@ -36,7 +36,10 @@ public class TestScenarios {
         $("div.loading-ticker").waitUntil(disappears,60000);
         $(byXpath("//ul[@class='select2-selection__rendered']")).findAll(By.xpath("//li[@class='select2-selection__choice']")).shouldHaveSize(1);
         $(byXpath("//li[@class='select2-selection__choice']")).shouldHave(attribute("title", "BMW"));
-        String[] arr = $(byXpath("//ul[@id='car-list']")).findAll(By.xpath("//div[@class='car-name']")).getTexts();
+        FiltersHelper.verifyCarsFilteredBySingleCarBrand("BMW");
+     //   FiltersHelper.verifyAllCarsInTheListHavePicture();
+        FiltersHelper.verifyAllCarsInTheListHaveCompleteInformation();
+
 
         sleep(123);
     }
