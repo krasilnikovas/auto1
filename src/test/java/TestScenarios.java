@@ -17,7 +17,7 @@ public class TestScenarios {
     }
     @Test
     public void filteringBMW (){
-        //Open https://auto1.com/en/our-cars
+        //Openï¿½https://auto1.com/en/our-cars
         Selenide.open("https://www.auto1.com/en/our-cars");
         //Filter by manufacture by clicking checkbox(BMW)
         $(byXpath("//span[contains(text(),'BMW')]")).click();
@@ -26,8 +26,8 @@ public class TestScenarios {
         $("div.loading-ticker").isDisplayed();
         $("div.loading-ticker").waitUntil(disappears,60000);
         $$(".select2-selection__rendered .select2-selection__choice").shouldHaveSize(1);
-        $(byXpath("//li[@class='select2-selection__choice']")).shouldHave(attribute("title", "BMW"));
-        //Verify all cars are BMW’s on the page
+        $(".select2-selection__choice").shouldHave(attribute("title", "BMW"));
+        //Verify all cars are BMWï¿½s on the page
         FiltersHelper.verifyCarsFilteredBySingleCarBrand("BMW");
         //Verify each car has picture
         FiltersHelper.verifyAllCarsInTheListHavePicture();
